@@ -1,0 +1,99 @@
+body {
+    background: black;
+    margin: 0;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    color: gold;
+    font-size: 48px;
+    text-align: center;
+    font-family: Arial;
+    margin-top: 20px;
+    text-shadow: 0 0 10px gold;
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    font-size: 72px;
+    text-shadow: 0 0 20px red;
+    display: none;
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.lives {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: red;
+    font-size: 24px;
+    text-shadow: 0 0 5px red;
+}
+
+.button {
+    background: rgba(255, 215, 0, 0.2);
+    border: 2px solid gold;
+    color: gold;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background: rgba(255, 215, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.score {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: gold;
+    font-size: 24px;
+    text-shadow: 0 0 5px gold;
+}
+
+.target {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid gold;
+    border-radius: 50%;
+    animation: pulse 1s infinite;
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    animation: explode 1s forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(30); opacity: 0; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
